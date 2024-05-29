@@ -47,5 +47,23 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 8. pnpm dlx drizzle-kit push --config=drizzle.config.ts
 9. Adding db:push(Migrations to db), db:studio(Visual Editor) scripts in the package.json file
 10. Discussing some basics of drizzle orm with use server
-11. Setting up the shadcn, some basics about it, then revalidating after adding items inside "use server"
-12. 
+11. Setting up the shadcn using docs, some basics about it, then revalidating after adding items inside "use server"
+12. Setting up the nextauth v5(beta version) -> docs is in this Link -> https://authjs.dev/getting-started/installation?framework=next.js
+13. Following the docs, setting up the google auth, taking the client id and client secret from the google cloud console
+14. Playing with nextauth, understanding the basics of it
+15. pnpm add drizzle-orm @auth/drizzle-adapter, adding the adapter in auth.ts, pnpm run db:push
+16. The creator dealing with the error of the adapter, so he just deleted the middleware.ts, did Manual SQL Drop, then pnpm run db:push.
+17. Just deleting the middleware.ts file, did the work for me.
+18. After the adapters are added up earlier, when we sign in with google, the user is saved in the database.
+19. Updating the schema.ts file, adding the items table, then pnpm run db:push
+
+
+
+
+
+### Steps of NextAuth
+1. Installation
+2. File Configurations
+3. Google cloud console(Providers)
+4. Session Management
+5. Adapters for saving to db
