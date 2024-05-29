@@ -46,3 +46,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 7. Creating the .env and adding the environment variables in it
 8. pnpm dlx drizzle-kit push --config=drizzle.config.ts
 9. Adding db:push(Migrations to db), db:studio(Visual Editor) scripts in the package.json file
+10. Discussing some basics of drizzle orm with use server
+11. Setting up the shadcn, some basics about it, then revalidating after adding items inside "use server"
+12. 
