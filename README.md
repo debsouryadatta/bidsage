@@ -56,7 +56,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 17. Just deleting the middleware.ts file, did the work for me.
 18. After the adapters are added up earlier, when we sign in with google, the user is saved in the database.
 19. Updating the schema.ts file, adding the items table, then pnpm run db:push
-
+20. Copying code of page.tsx from the older commits, trying out the previous useless code
+21. Creating the Header component, then adding the header in the layout.tsx file
+22. Creating the /items/create page, then adding the form in it, also creating server actions file associated with it
+23. Changing the ui of the "/" page, adding the items in the home page
+24. Changing the schema.ts file, adding the startingPrice for the items table, then pnpm run db:push
+25. Keeping the decimal values multiplied by 100 during storing it to db(since the db doesn't support decimal values), then dividing it by 100 while fetching it in the ui
 
 
 

@@ -1,5 +1,6 @@
 import { integer, pgTable, primaryKey, serial, text, timestamp } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters"
+import { start } from "repl";
 
 
 export const users = pgTable("user", {
@@ -70,4 +71,5 @@ export const items = pgTable('bs_items', {
     .notNull()
     .references(()=> users.id, { onDelete: 'cascade'}),
   name: text('name').notNull(),
+  startingPrice: integer('startingPrice').notNull().default(0),
 })
