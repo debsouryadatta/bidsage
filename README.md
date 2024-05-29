@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Steps of Development
+
+1. npx create-next-app@latest bidsage
+2. pnpm add drizzle-orm postgres, pnpm add -D drizzle-kit -> (Postgres db visual editor)
+3. Copy pasting the database.ts in db folder, this consists the code to cache the database instance to restrict the creation of more than one instances of db
+4. pnpm i @t3-oss/env-nextjs, pnpm add zod, exporting all the environment variables from the env.ts file
+5. Creating the schema.ts in the db folder, this consists the schema of the database
+6. Creating the drizzle.config.ts file to configure the drizzle-orm
+7. Creating the .env and adding the environment variables in it
+8. pnpm dlx drizzle-kit push --config=drizzle.config.ts
+9. Adding db:push(Migrations to db), db:studio(Visual Editor) scripts in the package.json file
