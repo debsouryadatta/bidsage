@@ -61,7 +61,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 22. Creating the /items/create page, then adding the form in it, also creating server actions file associated with it
 23. Changing the ui of the "/" page, adding the items in the home page
 24. Changing the schema.ts file, adding the startingPrice for the items table, then pnpm run db:push
-25. Keeping the decimal values multiplied by 100 during storing it to db(since the db doesn't support decimal values), then dividing it by 100 while fetching it in the ui
+25. Keeping the decimal values multiplied by 100 during storing it to db(since the db doesn't support decimal values), then dividing it by 100 while fetching it in the ui.
 
 
 
