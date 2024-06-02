@@ -7,6 +7,7 @@ import { database } from "@/db/database";
 import { bids as bidsSchema, items } from "@/db/schema";
 import { revalidatePath } from "next/cache";
 import { ItemCard } from "./item-card";
+import { pageTitleStyles } from "@/styles";
 
 export default async function HomePage() {
   const session = await auth();
@@ -14,8 +15,8 @@ export default async function HomePage() {
   const allItems = await database.query.items.findMany();
 
   return (
-    <main className="container mx-auto py-12 space-y-8">
-      <h1 className="text-4xl font-bold">Items For Sale</h1>
+    <main className="space-y-8">
+      <h1 className={pageTitleStyles}>Items For Sale</h1>
 
       <div className="grid grid-cols-4 gap-8">
         {allItems.map((item) => (

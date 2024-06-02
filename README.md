@@ -63,24 +63,15 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 24. Changing the schema.ts file, adding the startingPrice for the items table(putting default value to startingPrice since if we add a new column in between, all previous data in the table gets deleted), then pnpm run db:push
 25. Keeping the decimal values multiplied by 100 during storing it to db(since the db doesn't support decimal values), then dividing it by 100 while fetching it in the ui.
 26. In the tutorial, creator using cloudflare R2 for uploading images, since this needs credit card, so I am using cloudinary for images.
-27. Uploading files to cloudinary and getting the URL:
-    -// Convert the file to a buffer
-    -   const file = formData.get("file") as File;
-    -   const bytes = await file.arrayBuffer();
-    -   const buffer = Buffer.from(bytes);
-    -   const photoUrl = await getPhotoUrl(buffer);
-    -   console.log("Photo URL: ", photoUrl);
-
-    -// Convert buffer to data URL & uploading to cloudinary
-    -   const dataUrl = `data:image/png;base64,${bufferFile.toString("base64")}`;
-    -   let photoUrl = null;
-    -   photoUrl = await cloudinary.uploader.upload(dataUrl, {
-    -   upload_preset: env.CLOUDINARY_UPLOAD_PRESET,
-    -   folder: "bidsage",
-    -   });
+27. Uploading files to cloudinary and getting the URL -> Steps mentioned below.
 
 28. Moving the items from the home page to the ItemCard component.
-29. 
+29. Creating a separte My Auctions page, showing the items created by the user(const allItems = await database.query.items.findMany({ where: eq(items.userId, session.user.id!)}))
+30. Putting a button in the ItemCard component to go to the item page for bidding
+31. Creating the /items/[itemId] page, then adding the item details in it
+32. pnpm i date-fns, formatting the date in the item page
+33. Creating a column in the items table - bidInterval, then doing pnpm run db:push
+34. Creating formatToDollar func to format the price to dollar
 
 
 
@@ -91,3 +82,26 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 3. Google cloud console(Providers)
 4. Session Management
 5. Adapters for saving to db
+
+
+### Steps of Drizzle ORM
+
+
+### Cloudinary
+1. Uploading files to cloudinary and getting the URL:
+    -// Convert the file to a buffer
+    -   const file = formData.get("file") as File;
+    -   const bytes = await file.arrayBuffer();
+    -   const buffer = Buffer.from(bytes);
+    -   const photoUrl = await getPhotoUrl(buffer);
+    -   console.log("Photo URL: ", photoUrl);
+
+2. Convert buffer to data URL & uploading to cloudinary
+    -   const dataUrl = `data:image/png;base64,${bufferFile.toString("base64")}`;
+    -   let photoUrl = null;
+    -   photoUrl = await cloudinary.uploader.upload(dataUrl, {
+    -   upload_preset: env.CLOUDINARY_UPLOAD_PRESET,
+    -   folder: "bidsage",
+    -   });
+
+3. Getting the photoUrl, saving it to db, showing it in the ui
