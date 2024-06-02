@@ -32,11 +32,15 @@ export async function createItemAction(formData: FormData) {
 
   const priceAsCents = Math.floor(parseFloat(startingPrice) * 100);
 
+  const endDate = formData.get("date") as string;
+
   await database.insert(items).values({
     name: formData.get("name") as string,
     startingPrice: priceAsCents,
     userId: user.id,
     photoUrl: photoUrl,
+    currentBid: priceAsCents,
+    endDate: new Date(endDate),
   });
 
   redirect("/");

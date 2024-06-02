@@ -1,6 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Item } from "@/db/schema";
+import { isBidOver } from "@/lib/bids";
 import { formatToDollar } from "@/lib/currency";
+import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,10 +16,22 @@ export function ItemCard({ item }: { item: Item }) {
         height={200}
       />
       <h2 className="text-xl font-bold">{item.name}</h2>
-      <p className="text-lg">starting price: ${formatToDollar(item.startingPrice)}</p>
+      <p className="text-lg">
+        starting price: ${formatToDollar(item.startingPrice)}
+      </p>
 
-      <Button asChild>
-        <Link href={`/items/${item.id}`}>Place Bid</Link>
+      {isBidOver(item) ? (
+        <p className="text-lg">Bidding is Over</p>
+      ) : (
+        <p className="text-lg">
+          Ends On: {format(item.endDate, "eeee M/dd/yy")}
+        </p>
+      )}
+
+      <Button asChild variant={isBidOver(item) ? "outline" : "default"}>
+        <Link href={`/items/${item.id}`}>
+          {isBidOver(item) ? "View Bid" : "Place Bid"}
+        </Link>
       </Button>
     </div>
   );

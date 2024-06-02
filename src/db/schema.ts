@@ -70,6 +70,7 @@ export const items = pgTable('bs_items', {
   photoUrl: text('photoUrl').notNull(),
   bidInterval: integer('bidInterval').notNull().default(100),
   currentBid: integer('currentBid').notNull().default(0),
+  endDate: timestamp('endDate', { mode: 'date' }).notNull(),
 })
 
 

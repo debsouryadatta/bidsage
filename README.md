@@ -86,8 +86,14 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 45. pnpm i @knocklabs/node, modifying the createBidAction to send the notifications to the recipients
 46. next-auth was creating problems after the header component was made client component, so added callbacks property in the auth.ts file
 47. Creating the workflow on the knock dashboard, commit to development
-48. Triggering the notifications from the createBidAction, adding some custom
-
+48. Triggering the notifications from the createBidAction, adding some custom messages in the notifications component in the headers
+49. Changing the items create page to a client component, also changing the createItemAction accordingly
+50. Adding the Date Picker component from shadcn, using it in the create item page, useState to store the end date
+50. Adding endDate in the items table, then doing pnpm run db:push
+51. Creating isBidOver func, and putting conditionals in the item page, in the createBidAction, etc
+52. Creating a new Integration for sending emails(Resend, bringing Resend Api key and putting it here), modifying the workflow, adding the email support using Resend service.
+53. Verifying the Resend domain for sending emails (debsouryadatta.me), and updating it in the knock integration
+54. Some knock features and usecases are discussed.
 
 
 
@@ -124,4 +130,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 ### Steps of Knock
-1. 
+1. Follow step-41 to step-53
