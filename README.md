@@ -83,7 +83,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 42. Creating integrations in knock website, selecting knock app, putting the channelId in feedId(in .env file) and the public key in the public key field(inside .env file)
 43. Using the Notification components from the knock in the headers component
 44. The styles of the notification component was not working, I just went their github issues and found that add the line "import '@knocklabs/react/dist/index.css'" worked
-45. pnpm i @knocklabs/node,
+45. pnpm i @knocklabs/node, modifying the createBidAction to send the notifications to the recipients
+46. next-auth was creating problems after the header component was made client component, so added callbacks property in the auth.ts file
+47. Creating the workflow on the knock dashboard, commit to development
+48. Triggering the notifications from the createBidAction, adding some custom
 
 
 
@@ -94,6 +97,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 3. Google cloud console(Providers)
 4. Session Management
 5. Adapters for saving to db
+6. Also add the callbacks, shown in later part
 
 
 ### Steps of Drizzle ORM
