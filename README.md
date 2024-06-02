@@ -72,6 +72,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 32. pnpm i date-fns, formatting the date in the item page
 33. Creating a column in the items table - bidInterval, then doing pnpm run db:push
 34. Creating formatToDollar func to format the price to dollar
+35. Modifying the bids table schema, adding the amount, itemId, userId, then doing pnpm run db:push
+36. Modifying the items table, adding the currentBid, then doing pnpm run db:push
+37. Creating the createBidAction for creating the bid
+38. Modifying the bids table schema, adding the timestamp, then doing pnpm run db:push
+39. Adding the usersRelations in the schema.ts file(if i could recall, its not required in case of prisma), then doing pnpm run db:push
+40. Creating a separate data-access folder for the database queries
 
 
 

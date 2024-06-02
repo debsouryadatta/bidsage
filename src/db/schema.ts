@@ -1,3 +1,4 @@
+import { relations } from "drizzle-orm";
 import { integer, pgTable, primaryKey, serial, text, timestamp } from "drizzle-orm/pg-core";
 import type { AdapterAccountType } from "next-auth/adapters"
 import { start } from "repl";
@@ -58,12 +59,6 @@ export const users = pgTable("user", {
   )
 
 
-  // bid -> internal variable that we gonna use, bs_bids -> table name in actual db
-export const bids = pgTable('bs_bids', {
-  id: serial('id').primaryKey(),
-})
-
-
 // Items table
 export const items = pgTable('bs_items', {
   id: serial('id').primaryKey(),
@@ -74,6 +69,29 @@ export const items = pgTable('bs_items', {
   startingPrice: integer('startingPrice').notNull().default(0),
   photoUrl: text('photoUrl').notNull(),
   bidInterval: integer('bidInterval').notNull().default(100),
+  currentBid: integer('currentBid').notNull().default(0),
 })
+
+
+// bid -> internal variable that we gonna use, bs_bids -> table name in actual db
+export const bids = pgTable('bs_bids', {
+  id: serial('id').primaryKey(),
+  amount: integer('amount').notNull(),
+  itemId: serial('itemId')
+    .notNull()
+    .references(()=> items.id, { onDelete: 'cascade'}),
+  userId: text('userId')
+    .notNull()
+    .references(()=> users.id, { onDelete: 'cascade'}),
+  timestamp: timestamp('timestamp', { mode: 'date' }).notNull(),
+})
+
+export const usersRelations = relations(bids, ({ one }) => ({
+  user: one(users, {
+    fields: [bids.userId],
+    references: [users.id],
+  }),
+}));
+
 
 export type Item = typeof items.$inferSelect;
