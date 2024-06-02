@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { database } from "@/db/database";
 import { bids as bidsSchema, items } from "@/db/schema";
 import { revalidatePath } from "next/cache";
+import { ItemCard } from "./item-card";
 
 export default async function HomePage() {
   const session = await auth();
@@ -18,11 +19,7 @@ export default async function HomePage() {
 
       <div className="grid grid-cols-4 gap-8">
         {allItems.map((item) => (
-          <div key={item.id} className="border p-8 rounded-xl">
-            {item.name}
-            <br />
-            starting price: ${item.startingPrice / 100}
-          </div>
+          <ItemCard key={item.id} item={item} />
         ))}
       </div>
     </main>

@@ -72,4 +72,7 @@ export const items = pgTable('bs_items', {
     .references(()=> users.id, { onDelete: 'cascade'}),
   name: text('name').notNull(),
   startingPrice: integer('startingPrice').notNull().default(0),
+  photoUrl: text('photoUrl').notNull(),
 })
+
+export type Item = typeof items.$inferSelect;

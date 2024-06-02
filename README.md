@@ -60,8 +60,27 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 21. Creating the Header component, then adding the header in the layout.tsx file
 22. Creating the /items/create page, then adding the form in it, also creating server actions file associated with it
 23. Changing the ui of the "/" page, adding the items in the home page
-24. Changing the schema.ts file, adding the startingPrice for the items table, then pnpm run db:push
+24. Changing the schema.ts file, adding the startingPrice for the items table(putting default value to startingPrice since if we add a new column in between, all previous data in the table gets deleted), then pnpm run db:push
 25. Keeping the decimal values multiplied by 100 during storing it to db(since the db doesn't support decimal values), then dividing it by 100 while fetching it in the ui.
+26. In the tutorial, creator using cloudflare R2 for uploading images, since this needs credit card, so I am using cloudinary for images.
+27. Uploading files to cloudinary and getting the URL:
+    -// Convert the file to a buffer
+    -   const file = formData.get("file") as File;
+    -   const bytes = await file.arrayBuffer();
+    -   const buffer = Buffer.from(bytes);
+    -   const photoUrl = await getPhotoUrl(buffer);
+    -   console.log("Photo URL: ", photoUrl);
+
+    -// Convert buffer to data URL & uploading to cloudinary
+    -   const dataUrl = `data:image/png;base64,${bufferFile.toString("base64")}`;
+    -   let photoUrl = null;
+    -   photoUrl = await cloudinary.uploader.upload(dataUrl, {
+    -   upload_preset: env.CLOUDINARY_UPLOAD_PRESET,
+    -   folder: "bidsage",
+    -   });
+
+28. Moving the items from the home page to the ItemCard component.
+29. 
 
 
 

@@ -22,9 +22,10 @@ export default async function CreatePage() {
           className="max-w-lg"
           name="startingPrice"
           type="number"
-          step="0.01"
+          step="0.01" // only 2 decimal places
           placeholder="What to start your auction at"
         />
+        <Input type="file" name="file" className="cursor-pointer"></Input>
         <Button className="self-end" type="submit">
           Post Item
         </Button>
