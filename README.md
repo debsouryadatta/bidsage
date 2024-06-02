@@ -77,7 +77,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 37. Creating the createBidAction for creating the bid
 38. Modifying the bids table schema, adding the timestamp, then doing pnpm run db:push
 39. Adding the usersRelations in the schema.ts file(if i could recall, its not required in case of prisma), then doing pnpm run db:push
-40. Creating a separate data-access folder for the database queries
+40. Creating a separate data-access folder for the database queries, one for bids and one for items
+
+41. Start using Knock, pnpm add @knocklabs/react, wrap the app with KnockProvider in knock-provider.tsx
+42. Creating integrations in knock website, selecting knock app, putting the channelId in feedId(in .env file) and the public key in the public key field(inside .env file)
+43. Using the Notification components from the knock in the headers component
+44. The styles of the notification component was not working, I just went their github issues and found that add the line "import '@knocklabs/react/dist/index.css'" worked
+45. pnpm i @knocklabs/node,
 
 
 
@@ -111,3 +117,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
     -   });
 
 3. Getting the photoUrl, saving it to db, showing it in the ui
+
+
+### Steps of Knock
+1. 
