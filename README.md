@@ -99,6 +99,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 55. Was stuck in the Knock email with Resend stuff. Firstly verifying the Namecheap domain following the Resend docs about Namecheap domain integration. Finally putting the bidsage@resend.debsouryadatta.me in the knock resend integration configurations to successfully send the emails.
 
+56. FInally deploying it to vercel, just putting the environment variables and done, also after getting the webiste link, putting the link in the console.cloud.google.com -> Credentials -> Authorized redirect URIs
+
 
 
 ### Steps of NextAuth
