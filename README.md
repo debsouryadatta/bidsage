@@ -93,7 +93,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 51. Creating isBidOver func, and putting conditionals in the item page, in the createBidAction, etc
 52. Creating a new Integration for sending emails(Resend, bringing Resend Api key and putting it here), modifying the workflow, adding the email support using Resend service.
 53. Verifying the Resend domain for sending emails (debsouryadatta.me), and updating it in the knock integration
-54. Some knock features and usecases are discussed.
+54. Finally Some knock features and usecases are discussed.
+
+
+
+55. Was stuck in the Knock email with Resend stuff. Firstly verifying the Namecheap domain following the Resend docs about Namecheap domain integration. Finally putting the bidsage@resend.debsouryadatta.me in the knock resend integration configurations to successfully send the emails.
 
 
 
@@ -130,4 +134,4 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 
 ### Steps of Knock
-1. Follow step-41 to step-53
+1. Follow step-41 to step-55
