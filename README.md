@@ -48,6 +48,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 9. Adding db:push(Migrations to db), db:studio(Visual Editor) scripts in the package.json file
 10. Discussing some basics of drizzle orm with use server
 11. Setting up the shadcn using docs, some basics about it, then revalidating after adding items inside "use server"
+<!-- Next Auth --> ---
+<b>Next Auth:</b>
 12. Setting up the nextauth v5(beta version) -> docs is in this Link -> https://authjs.dev/getting-started/installation?framework=next.js
 13. Following the docs, setting up the google auth, taking the client id and client secret from the google cloud console
 14. Playing with nextauth, understanding the basics of it
@@ -100,6 +102,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 55. Was stuck in the Knock email with Resend stuff. Firstly verifying the Namecheap domain following the Resend docs about Namecheap domain integration. Finally putting the bidsage@resend.debsouryadatta.me in the knock resend integration configurations to successfully send the emails.
 
 56. FInally deploying it to vercel, just putting the environment variables and done, also after getting the webiste link, putting the link in the console.cloud.google.com -> Credentials -> Authorized redirect URIs
+
+
+
+### Deployment to VPS
+57. Copying the Dockerfile from the nextjs docs - https://nextjs.org/docs/pages/building-your-application/deploying
+58. 
 
 
 
