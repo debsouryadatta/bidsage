@@ -107,7 +107,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ### Deployment to VPS
 57. Copying the Dockerfile from the nextjs docs - https://nextjs.org/docs/pages/building-your-application/deploying
-58. 
+58. Copying the docker-compose.yml file from Elliott Chong
+59. Updating the build command -> `"build": "npx prisma generate && next build",` Also updating the next config to ignore eslint, typescript during build and setting the output to standalone(required for nextjs docker)
 
 
 
